@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.ff88b746.css",
+    "main.js": "/portfolio/static/js/main.420c1b53.js",
+    "static/media/FEP2.png": "/portfolio/static/media/FEP2.304850bca556808898cf.png",
+    "static/media/FEP3.png": "/portfolio/static/media/FEP3.15913d6386e6c4a57c1e.png",
+    "static/media/FEP1.png": "/portfolio/static/media/FEP1.2115b66ebaf2193929fd.png",
+    "static/media/CyberpunkDALLE5.png": "/portfolio/static/media/CyberpunkDALLE5.d135ce452165c228bd32.png",
+    "static/media/Reddit1.png": "/portfolio/static/media/Reddit1.25c66a0148461b364544.png",
+    "static/media/Blog1.png": "/portfolio/static/media/Blog1.8263c0a082e8d7a3fc66.png",
+    "static/media/Reddit2.png": "/portfolio/static/media/Reddit2.8a454bd9b27eb50c0f58.png",
+    "static/media/Blog3.png": "/portfolio/static/media/Blog3.a20b9350f1e3669e21f7.png",
+    "static/media/Blog2.png": "/portfolio/static/media/Blog2.a1f616811b024c56f440.png",
+    "static/media/Reddit3.png": "/portfolio/static/media/Reddit3.d541758e368699705c6a.png",
+    "static/media/JoeyDalrympleResume.pdf": "/portfolio/static/media/JoeyDalrympleResume.d4a024eb8287bd3863ac.pdf",
+    "static/media/liCrop.jpg": "/portfolio/static/media/liCrop.0c4439afdb69038bc2e8.jpg",
+    "static/media/dbIco.png": "/portfolio/static/media/dbIco.8ce50706b4b6f5b5386b.png",
+    "index.html": "/portfolio/index.html",
+    "main.ff88b746.css.map": "/portfolio/static/css/main.ff88b746.css.map",
+    "main.420c1b53.js.map": "/portfolio/static/js/main.420c1b53.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ff88b746.css",
+    "static/js/main.420c1b53.js"
+  ]
+}
