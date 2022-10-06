@@ -91,14 +91,17 @@ html {
 /* Projects */
 .projectOuter {
   display: flex;
-  overflow: hidden;
   flex-direction: column;
   justify-content: center;
   height: calc(100vh - 90px);
 }
+.MuiCardHeader-root,
+.css-185gdzj-MuiCardHeader-root {
+  padding: 4px !important;
+}
 .popLink,
 .popLink:visited {
-  font-family: Roboto, sans-serif;
+  font-family: "Nunito", sans-serif;
   color: black;
 }
 .typoDescription {
@@ -111,8 +114,9 @@ html {
   flex-direction: column;
   text-align: center;
   background: rgba(255, 255, 255, 1);
-  gap: 20px;
-  padding: 30px;
+  gap: 10px;
+  /* padding: 30px; */
+  padding: 4px 30px;
   color: black;
   width: 70%;
   margin: 0 auto;
@@ -120,12 +124,13 @@ html {
   font-weight: 800;
   border-radius: 12px;
 }
+
 .skillsContainer {
   max-width: 750px;
   height: calc(100vh - 90px);
   display: flex;
   align-items: center;
-  margin: 0 auto;
+  margin: -20px auto;
 }
 .skills {
   display: grid;
@@ -137,7 +142,7 @@ html {
   flex-direction: column;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 .frontend,
 .backend,
@@ -152,7 +157,7 @@ html {
   align-self: center;
 }
 .skillsImg img {
-  height: 50px;
+  height: 40px;
 }
 .dbImg img {
   height: 75px;
@@ -182,14 +187,14 @@ html {
 }
 
 .bio {
-  font-family: Roboto, sans-serif;
+  font-family: "Nunito", sans-serif;
   padding: 0px 0px 0px 0px;
   overflow-y: scroll;
   overflow-x: hidden;
   max-height: 92%;
 }
 .shared {
-  font-family: Roboto, sans-serif;
+  font-family: "Nunito", sans-serif;
   -webkit-touch-callout: all;
   -webkit-user-select: all;
   -khtml-user-select: all;
@@ -220,10 +225,15 @@ html {
   border-radius: 4px;
 }
 .MuiSnackbarContent-message {
-  font-family: Roboto, sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 /* Media Queries */
+@media only screen and (max-height: 1000px) {
+  .projectOuter {
+    margin-top: -30px;
+  }
+}
 @media (min-width: 601px) {
   .css-cuefkz-MuiContainer-root {
     width: 60vw !important;

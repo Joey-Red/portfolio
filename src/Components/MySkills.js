@@ -42,7 +42,7 @@ function MySkills(props) {
               color: "#1470BE",
             }}
           >
-            My Skills & Technologies
+            My Skills & Tech
           </div>
           <div className="skills">
             <div className="frontend">

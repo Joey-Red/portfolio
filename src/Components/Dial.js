@@ -17,41 +17,47 @@ function Dial() {
     window.open("https://twitter.com/JoeyDalrymple_", "_blank");
   };
   return (
-    <div>
-      <SpeedDial
-        className="speedDialLoc"
-        ariaLabel="Important Links"
-        sx={{ position: "fixed", bottom: 16, right: 16 }}
-        icon={<SpeedDialIcon style={{ color: "black" }} />}
-        FabProps={{
-          sx: {
+    <SpeedDial
+      className="speedDialLoc"
+      ariaLabel="Important Links"
+      sx={{
+        position: "fixed",
+        bottom: 16,
+        right: 16,
+      }}
+      icon={<SpeedDialIcon style={{ color: "black" }} />}
+      FabProps={{
+        sx: {
+          bgcolor: "#51D2EA",
+          WebkitBoxShadow: "none",
+          // boxShadow: "none",
+          "&:hover": {
             bgcolor: "#51D2EA",
-            "&:hover": {
-              bgcolor: "#51D2EA",
-            },
+            // boxShadow: "none",
+            WebkitBoxShadow: "none",
           },
-        }}
-      >
-        <SpeedDialAction
-          key={"GitHub"}
-          icon={<GitHubIcon />}
-          tooltipTitle={"GitHub"}
-          onClick={reroutGh}
-        />
-        <SpeedDialAction
-          key={"Twitter"}
-          icon={<TwitterIcon />}
-          tooltipTitle={"Twitter"}
-          onClick={reroutTw}
-        />
-        <SpeedDialAction
-          key={"LinkedIn"}
-          icon={<LinkedInIcon />}
-          tooltipTitle={"LinkedIn"}
-          onClick={reroutLi}
-        />
-      </SpeedDial>
-    </div>
+        },
+      }}
+    >
+      <SpeedDialAction
+        key={"GitHub"}
+        icon={<GitHubIcon />}
+        tooltipTitle={"GitHub"}
+        onClick={reroutGh}
+      />
+      <SpeedDialAction
+        key={"Twitter"}
+        icon={<TwitterIcon />}
+        tooltipTitle={"Twitter"}
+        onClick={reroutTw}
+      />
+      <SpeedDialAction
+        key={"LinkedIn"}
+        icon={<LinkedInIcon />}
+        tooltipTitle={"LinkedIn"}
+        onClick={reroutLi}
+      />
+    </SpeedDial>
   );
 }
 

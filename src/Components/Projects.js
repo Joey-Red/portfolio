@@ -70,7 +70,7 @@ function Projects(props) {
               onChange={handleChange}
               project={project}
               style={{
-                marginTop: "8px",
+                marginTop: "4px",
                 backgroundColor: "rgba(255,255,255,0.8)",
                 padding: "4px",
                 borderRadius: "12px",
