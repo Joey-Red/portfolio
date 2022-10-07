@@ -54,7 +54,6 @@ function AboutMe(props) {
 
           {bio === 0 ? (
             <div className="bio" style={{ padding: 30 }}>
-              I am a{" "}
               <img
                 src={me}
                 alt="me"

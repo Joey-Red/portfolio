@@ -227,17 +227,23 @@ html {
 .MuiSnackbarContent-message {
   font-family: "Nunito", sans-serif;
 }
-
+.pagStack {
+  padding: 10px 0px !important;
+}
 /* Media Queries */
 @media only screen and (max-height: 1000px) {
   .projectOuter {
     margin-top: -30px;
   }
 }
-/* @media (min-width: 500px) {
-  .pagStack {
+@media only screen and (max-height: 615px) {
+  .MuiTypography-root {
+    max-height: 70px;
   }
-} */
+  .css-46bh2p-MuiCardContent-root:last-child {
+    padding: 10px !important;
+  }
+}
 @media (min-width: 601px) {
   .css-cuefkz-MuiContainer-root {
     width: 60vw !important;
