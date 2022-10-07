@@ -40,12 +40,8 @@ function AboutMe(props) {
         ranNav={ranNav}
         setRanNav={setRanNav}
       />
-      {/* <motion.div */}
       <motion.div
         className="contactContainer"
-        // initial={{ y: 1000, opacity: 0 }}
-        // animate={{ transitionDuration: "0.5s", y: 0, opacity: 1 }}
-        // exit={{ y: -1000, opacity: 0 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -64,33 +60,37 @@ function AboutMe(props) {
                 alt="me"
                 style={{ float: "right", maxHeight: "120px" }}
               />{" "}
-              Web Developer From Kansas. I enjoy progamming and have devoted a
-              large amount of time to it. I am always working on my skills. I
-              enjoy complex problem solving, making cool projects, and staying
-              in shape.
+              Thank you for visiting my page. My name is Joey Dalrymple and I am
+              an aspiring web developer based in Derby, Kansas. I enjoy complex
+              problem solving, creating cool projects, and staying physically
+              fit. Programming is something I am very passionate about, and I
+              have dedicated all of my free time to pursuing a more complete
+              skillset that will benefit me in a career that involves
+              programming and development.
             </div>
           ) : (
             <div className="bio">
-              I am a Web developer located in Kansas,{" "}
               <img
                 src={me}
                 alt="me"
                 style={{ float: "right", maxHeight: "150px" }}
               />
-              I am a Web developer located in Kansas USA preferring the front
-              end side of things, but I do back end as well. I enjoy complex
-              problem solving, making cool things, staying fit, and playing with
-              my dogs. I have a positive attitude and am good at handling stress
-              and anxiety. I am looking forward to picking up new tools and
-              languages. I am 26 years old, and I've been working retail for
-              nearly 10 years, I had to make a change. I had to learn a skill,
-              and even though I've used Python, C++ and a little Java before,
-              when I found JavaScript I knew it was the right primary language
-              for me. A few months into learning, I decided to focus all of my
-              free time and effort on web development. I switched solely to a
-              Linux boot, deleted all of my video games and have been working
-              hard and I will continue to do so every day. Thank you for
-              visiting my page.
+              Thank you for visiting my page. My name is Joey Dalrymple and I am
+              an aspiring web developer based in Derby, Kansas. I enjoy complex
+              problem solving, constructing cool projects, staying physically
+              fit, and spending time with my dogs. After working in a retail job
+              for nearly 10 years, I decided to make a change. I wanted
+              something better. I wanted to learn a skill, and concluded that
+              [programming] was what I wanted to do. I have some experience with
+              Python, C++, and Java; but when I discovered Javascript, I knew
+              that it was the right programming language for me. After a few
+              months of building a good foundation for my skillset, I switched
+              gears and focused all of my free time and effort on web
+              development. I switched solely to a Linux boot, deleted my games,
+              and cut out any unnecessary distractions from my life so I could
+              work hard and develop my skills as a developer. Web development is
+              something I am very passionate about, I can not wait to create
+              more amazing projects.
             </div>
           )}
         </div>

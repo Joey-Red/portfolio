@@ -5,7 +5,7 @@ import { Container } from "@mui/system";
 import Project1 from "./projects/Project1";
 import Project2 from "./projects/Project2";
 import Project3 from "./projects/Project3";
-import { Card } from "@mui/material";
+import { Card, Tab, Tabs } from "@mui/material";
 import { motion } from "framer-motion";
 import NavIntro from "./NavIntro";
 
@@ -19,22 +19,27 @@ function Projects(props) {
     ranNav,
     setRanNav,
   } = props;
-  let [project, setProject] = useState(1);
+  let [project, setProject] = useState(0);
   let handleChange = (e, p) => {
     setProject(p);
   };
   let projectSwitch = () => {
-    if (project === 1) {
+    if (project === 0) {
       return <Project1 />;
     }
-    if (project === 2) {
+    if (project === 1) {
       return <Project2 />;
     }
-    if (project === 3) {
+    if (project === 2) {
       return <Project3 />;
     }
   };
-
+  function a11yProps(project) {
+    return {
+      id: `simple-tab-${project}`,
+      "aria-controls": `simple-tabpanel-${project}`,
+    };
+  }
   return (
     <>
       <NavIntro
@@ -61,22 +66,29 @@ function Projects(props) {
           }}
           id="projects"
         >
-          <Card>{projectSwitch(project)}</Card>
-          <Stack spacing={2}>
-            <Pagination
-              count={3}
-              variant="text"
-              color="primary"
+          <Stack
+            spacing={2}
+            style={{
+              background: "white",
+              padding: "10px 30px",
+              marginBottom: "-4px",
+              maxWidth: "100%",
+              minWidth: "100%",
+              alignItems: "center",
+            }}
+            className="pagStack"
+          >
+            <Tabs
+              value={project}
               onChange={handleChange}
-              project={project}
-              style={{
-                marginTop: "4px",
-                backgroundColor: "rgba(255,255,255,0.8)",
-                padding: "4px",
-                borderRadius: "12px",
-              }}
-            />
+              aria-label="Projects 1-3"
+            >
+              <Tab label="Event Planner" {...a11yProps(0)} />
+              <Tab label="BlogApi" {...a11yProps(1)} />
+              <Tab label="Reddit" {...a11yProps(2)} />
+            </Tabs>
           </Stack>
+          <Card>{projectSwitch(project)}</Card>
         </Container>
       </motion.div>
     </>

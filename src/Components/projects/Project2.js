@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import BAP1 from "../../resources/projImg/Blog1.png";
 import BAP2 from "../../resources/projImg/Blog2.png";
 import BAP3 from "../../resources/projImg/Blog3.png";
-import { CardMedia, Modal } from "@mui/material";
+import { CardMedia, Modal, Pagination } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import { Container } from "@mui/system";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import CardHeader from "@mui/material/CardHeader";
 import IconButton from "@mui/material/IconButton";
@@ -16,14 +14,14 @@ import Typography from "@mui/material/Typography";
 import CardContent from "@mui/material/CardContent";
 
 function Project2() {
-  let [img, setImg] = useState(0);
+  let [img, setImg] = useState(1);
 
   const [openModal, setOpenModal] = React.useState(false);
   const handleOpenModal = () => setOpenModal(true);
   const handleCloseModal = () => setOpenModal(false);
 
   let ModalImg = () => {
-    if (img === 0) {
+    if (img === 1) {
       return (
         <CardMedia
           className="projPic"
@@ -33,7 +31,7 @@ function Project2() {
         />
       );
     }
-    if (img === 1) {
+    if (img === 2) {
       return (
         <CardMedia
           className="projPic"
@@ -43,7 +41,7 @@ function Project2() {
         />
       );
     }
-    if (img === 2) {
+    if (img === 3) {
       return (
         <CardMedia
           className="projPic"
@@ -72,14 +70,7 @@ function Project2() {
 
   let handleChange = (e, p) => {
     setImg(p);
-    console.log(img);
   };
-  function a11yProps(img) {
-    return {
-      id: `simple-tab-${img}`,
-      "aria-controls": `simple-tabpanel-${img}`,
-    };
-  }
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -94,7 +85,7 @@ function Project2() {
   const id = open ? "simple-popover" : undefined;
 
   let imgSwitch = () => {
-    if (img === 0) {
+    if (img === 1) {
       return (
         <CardMedia
           component="img"
@@ -104,7 +95,7 @@ function Project2() {
         />
       );
     }
-    if (img === 1) {
+    if (img === 2) {
       return (
         <CardMedia
           component="img"
@@ -114,7 +105,7 @@ function Project2() {
         />
       );
     }
-    if (img === 2) {
+    if (img === 3) {
       return (
         <CardMedia
           component="img"
@@ -143,13 +134,6 @@ function Project2() {
           alignItems: "center",
         }}
       >
-        <Stack spacing={2} style={{ position: "relative" }}>
-          <Tabs value={img} onChange={handleChange} aria-label="Photos 1-3">
-            <Tab label="Image One" {...a11yProps(0)} />
-            <Tab label="Image Two" {...a11yProps(1)} />
-            <Tab label="Image Three" {...a11yProps(2)} />
-          </Tabs>
-        </Stack>
         <div style={{ marginBottom: "8px" }}>
           <CardHeader
             action={
@@ -212,6 +196,21 @@ function Project2() {
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}></Box>
         </Box>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}></Box>
+        <Stack spacing={2}>
+          <Pagination
+            count={3}
+            variant="text"
+            color="primary"
+            onChange={handleChange}
+            project={img}
+            style={{
+              marginTop: "4px",
+              backgroundColor: "rgba(255,255,255,0.8)",
+              padding: "4px",
+              borderRadius: "12px",
+            }}
+          />
+        </Stack>
       </Container>
     </>
   );
