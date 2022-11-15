@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import TW1 from "../../resources/projImg/TW1.png";
-import TW2 from "../../resources/projImg/TW2.png";
-import TW3 from "../../resources/projImg/TW3.png";
+import FEP1 from "../../resources/projImg/FEP1.png";
+import FEP2 from "../../resources/projImg/FEP2.png";
+import FEP3 from "../../resources/projImg/FEP3.png";
 import { CardMedia, Modal, Pagination } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
-import { Container } from "@mui/system";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import CardHeader from "@mui/material/CardHeader";
 import IconButton from "@mui/material/IconButton";
 import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
 import CardContent from "@mui/material/CardContent";
+import { Container } from "@mui/system";
 
 function Project3() {
     let [img, setImg] = useState(1);
@@ -26,8 +26,8 @@ function Project3() {
                 <CardMedia
                     className="projPic"
                     component="img"
-                    image={TW1}
-                    alt="The Watchlist 1"
+                    image={FEP1}
+                    alt="Free Event Planner 1"
                 />
             );
         }
@@ -36,8 +36,8 @@ function Project3() {
                 <CardMedia
                     className="projPic"
                     component="img"
-                    image={TW2}
-                    alt="The Watchlist 2"
+                    image={FEP2}
+                    alt="Free Event Planner 2"
                 />
             );
         }
@@ -46,8 +46,8 @@ function Project3() {
                 <CardMedia
                     className="projPic"
                     component="img"
-                    image={TW3}
-                    alt="The Watchlist 3"
+                    image={FEP3}
+                    alt="Free Event Planner 3"
                 />
             );
         }
@@ -70,8 +70,13 @@ function Project3() {
 
     let handleChange = (e, p) => {
         setImg(p);
-        console.log(img);
     };
+    // function a11yProps(img) {
+    //   return {
+    //     id: `simple-tab-${img}`,
+    //     "aria-controls": `simple-tabpanel-${img}`,
+    //   };
+    // }
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleClick = (event) => {
@@ -91,8 +96,8 @@ function Project3() {
                 <CardMedia
                     component="img"
                     height="200px"
-                    image={TW1}
-                    alt="The Watchlist 2"
+                    image={FEP1}
+                    alt="Free Event Planner 1"
                 />
             );
         }
@@ -101,8 +106,8 @@ function Project3() {
                 <CardMedia
                     component="img"
                     height="200px"
-                    image={TW2}
-                    alt="The Watchlist 2"
+                    image={FEP2}
+                    alt="Free Event Planner 2"
                 />
             );
         }
@@ -111,12 +116,13 @@ function Project3() {
                 <CardMedia
                     component="img"
                     height="200px"
-                    image={TW3}
-                    alt="The Watchlist 2"
+                    image={FEP3}
+                    alt="Free Event Planner 3"
                 />
             );
         }
     };
+
     return (
         <>
             <Modal
@@ -135,7 +141,7 @@ function Project3() {
                     alignItems: "center",
                 }}
             >
-                <div style={{ marginBottom: "8px" }}>
+                <div>
                     <CardHeader
                         action={
                             <IconButton
@@ -147,7 +153,7 @@ function Project3() {
                                 <MoreVertIcon />
                             </IconButton>
                         }
-                        title="The Watchlist"
+                        title="Free Event Planner"
                     />
                     <Popover
                         id={id}
@@ -162,13 +168,13 @@ function Project3() {
                         <Typography sx={{ p: 2 }}>
                             <Stack>
                                 <a
-                                    href="https://joey-red.github.io/tw-frontend/"
+                                    href="https://joey-red.github.io/EventPlanner/"
                                     className="popLink"
                                 >
                                     Live Project Link
                                 </a>
                                 <a
-                                    href="https://github.com/Joey-Red/tw-frontend"
+                                    href="https://github.com/Joey-Red/EventPlanner"
                                     className="popLink"
                                 >
                                     Github Repo
@@ -186,15 +192,13 @@ function Project3() {
                             color="text.secondary"
                             className="typoDescription"
                         >
-                            This is my Movie rating website, you can search for
-                            movies, view details about them and provide
-                            feedback. Such as a rating and comment. Also
-                            featured is a news API where pop culture news is
-                            displayed and linked. On your profile you can have
-                            full CRUD functionality, and there is an option to
-                            copy a link to your profile so you can share your
-                            list with others. This project uses the MERN stack,
-                            along with Typescript.
+                            This project is an Event Planner using the MERN
+                            stack. Where you can create events, where you will
+                            be provided a link to send to other people. It also
+                            lists public events for anyone to join! It uses a
+                            monorepo where the React front end is hosted on
+                            Github Pages, the Node/Express backend are hosted on
+                            heroku. This project uses MongoDB for the database.
                         </Typography>
                     </CardContent>
                 </div>
