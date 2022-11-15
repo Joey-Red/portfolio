@@ -82,9 +82,9 @@ function Projects(props) {
                             onChange={handleChange}
                             aria-label="Projects 1-3"
                         >
-                            <Tab label="Event Planner" {...a11yProps(0)} />
+                            <Tab label="The Watchlist" {...a11yProps(0)} />
                             <Tab label="BlogApi" {...a11yProps(1)} />
-                            <Tab label="Reddit" {...a11yProps(2)} />
+                            <Tab label="Event Planner" {...a11yProps(2)} />
                         </Tabs>
                     </Stack>
                     <Card>{projectSwitch(project)}</Card>
