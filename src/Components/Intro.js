@@ -19,15 +19,17 @@ function Intro() {
                     on some very exciting and impactful projects that will do
                     good in the world.
                 </p>
+
                 <div className="flex justify-evenly mb-4">
-                    <motion.button
+                    <motion.a
                         exit={{ opacity: 0 }}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         className="bg-neutral-900 p-2 rounded-full text-white hover:scale-[1.1] flex justify-center items-center"
+                        href="#contact"
                     >
                         Contact me
-                    </motion.button>
+                    </motion.a>
                     <motion.button
                         exit={{ opacity: 0 }}
                         initial={{ opacity: 0 }}

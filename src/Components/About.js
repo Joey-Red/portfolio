@@ -4,7 +4,7 @@ function About() {
     return (
         <div
             id="about"
-            className=" p-8 flex flex-col w-full sm:w-[60%] bg-neutral-900/90 text-white rounded-xl mt-2 sm:mt-4 text-lg p-2 flex justify-center"
+            className="order-first md:order-last p-8 md:w-[60%] flex flex-col w-full bg-neutral-900/90 text-white rounded-xl mt-2 sm:mt-4 text-lg p-2 flex justify-center"
         >
             {" "}
             <h1 className="text-xl text-center underline">About me</h1>
