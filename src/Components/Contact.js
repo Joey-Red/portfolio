@@ -1,102 +1,63 @@
-import React, { useState, useEffect } from "react";
-import { Button, Breadcrumbs } from "@mui/material";
+import {
+    faArrowUp,
+    faClipboard,
+    faDownload,
+} from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
-import Footer from "./Footer";
-import NavIntro from "../Components/NavIntro";
-import me from "../resources/liCrop.jpg";
-function AboutMe(props) {
-  let {
-    setShowProjects,
-    setShowSkills,
-    setShowContact,
-    setShowNavIntro,
-    setIsOpen,
-    ranNav,
-    setRanNav,
-  } = props;
-  const [bio, setBio] = useState(0);
-  let setShortBio = () => {
-    setBio(0);
-  };
-  let setLongBio = () => {
-    setBio(1);
-  };
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+import myResume from "./resume/JoeyDalrympleResume.pdf";
+function Contact() {
+    const copyEmail = () => {
+        navigator.clipboard.writeText("joeyedalrymple@gmail.com");
+    };
+    const copyPhone = () => {
+        navigator.clipboard.writeText("3166099213");
+    };
+    return (
+        <div
+            id="contact"
+            className="flex-grow mt-2 sm:mt-4 bg-neutral-900/90 text-white rounded-xl  text-xl p-8 flex-col flex items-center"
+        >
+            <h1 className="underline">Contact me</h1>
+            <h2>Joey Dalrymple</h2>
+            <div className="mb-4 gap-2 max-h-[300px] flex-col flex justify-center items-center justify-evenly h-full">
+                <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={() => copyEmail()}
+                    className="bg-black text-white p-3 rounded-full flex justify-center items-center"
+                >
+                    joeyedalrymple@gmail
+                    <FontAwesomeIcon icon={faClipboard} className="ml-2" />
+                </motion.button>
 
-  useEffect(() => {
-    let width = window.innerWidth;
-    if (width > 800) {
-      setBio(1);
-    }
-  }, []);
-
-  return (
-    <>
-      <NavIntro
-        setShowProjects={setShowProjects}
-        setShowSkills={setShowSkills}
-        setShowContact={setShowContact}
-        setShowNavIntro={setShowNavIntro}
-        setIsOpen={setIsOpen}
-        ranNav={ranNav}
-        setRanNav={setRanNav}
-      />
-      <motion.div
-        className="contactContainer"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-      >
-        <div className="contactInner" style={{ position: "relative" }}>
-          <Breadcrumbs aria-label="breadcrumb">
-            <Button onClick={setShortBio}>Short Bio</Button>
-            <Button onClick={setLongBio}>Long Bio</Button>
-          </Breadcrumbs>
-
-          {bio === 0 ? (
-            <div className="bio" style={{ padding: 30 }}>
-              <img
-                src={me}
-                alt="me"
-                style={{ float: "right", maxHeight: "120px" }}
-              />{" "}
-              Thank you for visiting my page. My name is Joey Dalrymple and I am
-              an aspiring web developer based in Derby, Kansas. I enjoy complex
-              problem solving, creating cool projects, and staying physically
-              fit. Programming is something I am very passionate about, and I
-              have dedicated all of my free time to pursuing a more complete
-              skillset that will benefit me in a career that involves
-              programming and development.
+                <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={() => copyPhone()}
+                    className="bg-black text-white p-3 rounded-full flex justify-center items-center"
+                >
+                    316-609-9213
+                    <FontAwesomeIcon icon={faClipboard} className="ml-2" />
+                </motion.button>
+                <motion.a
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    href={myResume}
+                    download="JoeyDalrympleResume"
+                    className="bg-black text-white p-3 rounded-full flex justify-center items-center"
+                >
+                    Download Resume{" "}
+                    <FontAwesomeIcon icon={faDownload} className="ml-2" />
+                </motion.a>
             </div>
-          ) : (
-            <div className="bio">
-              <img
-                src={me}
-                alt="me"
-                style={{ float: "right", maxHeight: "150px" }}
-              />
-              Thank you for visiting my page. My name is Joey Dalrymple and I am
-              an aspiring web developer based in Derby, Kansas. I enjoy complex
-              problem solving, constructing cool projects, staying physically
-              fit, and spending time with my dogs. After working in a retail job
-              for nearly 10 years, I decided to make a change. I wanted
-              something better. I wanted to learn a skill, and concluded that
-              [programming] was what I wanted to do. I have some experience with
-              Python, C++, and Java; but when I discovered Javascript, I knew
-              that it was the right programming language for me. After a few
-              months of building a good foundation for my skillset, I switched
-              gears and focused all of my free time and effort on web
-              development. I switched solely to a Linux boot, deleted my games,
-              and cut out any unnecessary distractions from my life so I could
-              work hard and develop my skills as a developer. Web development is
-              something I am very passionate about, I can not wait to create
-              more amazing projects.
-            </div>
-          )}
+
+            <a href="#nav" className="mt-auto">
+                To top <FontAwesomeIcon icon={faArrowUp} className="ml-2" />
+            </a>
         </div>
-        <Footer />
-      </motion.div>
-    </>
-  );
+    );
 }
 
-export default AboutMe;
+export default Contact;

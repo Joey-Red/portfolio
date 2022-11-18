@@ -1,92 +1,47 @@
 import React, { useState } from "react";
 import "./Styles/style.css";
-import Intro from "./Components/Intro";
-import Projects from "./Components/Projects";
-import MySkills from "./Components/MySkills";
-import Contact from "./Components/Contact";
-import Dial from "./Components/Dial";
-import { v4 as uuidv4 } from "uuid";
+import Navbar from "./Components/Navbar";
+import me from "./resources/liCrop.jpg";
 import { AnimatePresence } from "framer-motion";
+import Intro from "./Components/Intro";
+import ProjectOne from "./Components/ProjectOne";
+import ProjectTwo from "./Components/ProjectTwo";
+import ProjectThree from "./Components/ProjectThree";
+import ProjectFour from "./Components/ProjectFour";
+import Contact from "./Components/Contact";
+import About from "./Components/About";
 function App() {
-  let [showProjects, setShowProjects] = useState(false);
-  let [showSkills, setShowSkills] = useState(false);
-  let [showContact, setShowContact] = useState(false);
-  let [showNavIntro, setShowNavIntro] = useState(false);
-  let [isOpen, setIsOpen] = useState(true);
-  let [showIntro, setShowIntro] = useState(true);
-  let [ranNav, setRanNav] = useState(false);
-  return (
-    <div className="App">
-      <AnimatePresence mode="wait" initial={false}>
-        {showIntro && (
-          <Intro
-            showProjects={showProjects}
-            setShowProjects={setShowProjects}
-            showSkills={showSkills}
-            setShowSkills={setShowSkills}
-            showContact={showContact}
-            setShowContact={setShowContact}
-            setShowNavIntro={setShowNavIntro}
-            showNavIntro={showNavIntro}
-            isOpen={isOpen}
-            setIsOpen={setIsOpen}
-            setShowIntro={setShowIntro}
-            key={uuidv4()}
-          />
-        )}
-
-        {showProjects && (
-          <Projects
-            ranNav={ranNav}
-            setRanNav={setRanNav}
-            showProjects={showProjects}
-            setShowProjects={setShowProjects}
-            showSkills={showSkills}
-            setShowSkills={setShowSkills}
-            showContact={showContact}
-            setShowContact={setShowContact}
-            setShowNavIntro={setShowNavIntro}
-            showNavIntro={showNavIntro}
-            key={uuidv4()}
-            setIsOpen={setIsOpen}
-          />
-        )}
-        {showSkills && (
-          <MySkills
-            ranNav={ranNav}
-            setRanNav={setRanNav}
-            key={uuidv4()}
-            showProjects={showProjects}
-            setShowProjects={setShowProjects}
-            showSkills={showSkills}
-            setShowSkills={setShowSkills}
-            showContact={showContact}
-            setShowContact={setShowContact}
-            setShowNavIntro={setShowNavIntro}
-            showNavIntro={showNavIntro}
-            setIsOpen={setIsOpen}
-          />
-        )}
-        {showContact && (
-          <Contact
-            ranNav={ranNav}
-            setRanNav={setRanNav}
-            key={uuidv4()}
-            showProjects={showProjects}
-            setShowProjects={setShowProjects}
-            showSkills={showSkills}
-            setShowSkills={setShowSkills}
-            showContact={showContact}
-            setShowContact={setShowContact}
-            setShowNavIntro={setShowNavIntro}
-            showNavIntro={showNavIntro}
-            setIsOpen={setIsOpen}
-          />
-        )}
-      </AnimatePresence>
-      <Dial key="dial" />
-    </div>
-  );
+    return (
+        <div
+            id="anchor"
+            className="App sm:w-[80%] md:max-w-[1300px] flex mx-auto flex-col bg-white rounded-xl"
+        >
+            <div className="rounded-xl bg-white m-2 p-2">
+                <AnimatePresence mode="wait" initial={false}>
+                    <Navbar />
+                    <div className="flex sm:gap-4 flex-col md:flex-row">
+                        <Intro />
+                        <div className="rounded-xl mt-2 sm:mt-0 flex flex-grow justify-center bg-neutral-900/90">
+                            <img
+                                src={me}
+                                alt="Me"
+                                className="rounded-xl my-2 object-contain"
+                            />
+                        </div>
+                    </div>
+                    <div className="grid md:grid-cols-2 sm:gap-4">
+                        <ProjectOne />
+                        <ProjectTwo />
+                        <ProjectThree />
+                        <ProjectFour />
+                    </div>
+                    <div className="w-full flex sm:gap-4 flex-col md:flex-row">
+                        <Contact />
+                        <About />
+                    </div>
+                </AnimatePresence>
+            </div>
+        </div>
+    );
 }
-
 export default App;

@@ -1,81 +1,64 @@
 import React from "react";
-import { Breadcrumbs, Button } from "@mui/material";
-import { motion } from "framer-motion";
-
-function Intro(props) {
-  let {
-    setShowProjects,
-    setShowSkills,
-    setShowContact,
-    setShowNavIntro,
-    setIsOpen,
-    setShowIntro,
-  } = props;
-
-  let styles = {
-    fontSize: "1rem",
-    fontWeight: "800",
-  };
-  let handleClick = (e) => {
-    setIsOpen(false);
-    if (e.target.value === "skills") {
-      setShowSkills(true);
-      setShowContact(false);
-      setShowProjects(false);
-      setShowNavIntro(true);
-      setShowIntro(false);
-    } else if (e.target.value === "projects") {
-      setShowSkills(false);
-      setShowContact(false);
-      setShowProjects(true);
-      setShowNavIntro(true);
-      setShowIntro(false);
-    } else if (e.target.value === "contact") {
-      setShowSkills(false);
-      setShowContact(true);
-      setShowProjects(false);
-      setShowNavIntro(true);
-      setShowIntro(false);
-    }
-  };
-  return (
-    <motion.div
-      // <motion.div
-      className="introContainer"
-      id="content"
-      exit={{ opacity: 0 }}
-    >
-      <div className="introContent">
-        <div className="introContentInner">
-          <div className="introText">Joey Dalrymple</div>
-          <div className="introText">Full Stack Engineer</div>
-          <Breadcrumbs aria-label="breadcrumb">
-            <Button
-              onClick={(e) => handleClick(e)}
-              style={styles}
-              value="skills"
-            >
-              Skills
-            </Button>
-            <Button
-              onClick={(e) => handleClick(e)}
-              style={styles}
-              value="projects"
-            >
-              Projects
-            </Button>
-            <Button
-              onClick={(e) => handleClick(e)}
-              style={styles}
-              value="contact"
-            >
-              Contact/Bio
-            </Button>
-          </Breadcrumbs>
-        </div>
-      </div>
-    </motion.div>
-  );
+import { AnimatePresence, motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faGithub,
+    faLinkedin,
+    faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+function Intro() {
+    return (
+        <AnimatePresence>
+            <div className="bg-neutral-900/90 rounded-xl md:w-[65%] p-3 text-white">
+                <h1 className="text-2xl m-8">
+                    Hey I'm Joey, a self-taught Web developer!
+                </h1>
+                <p className="md:text-base text-sm m-8 mb-32">
+                    I enjoy making websites and web applications that are user
+                    friendly, responsive, and beautiful. I hope to one day work
+                    on some very exciting and impactful projects that will do
+                    good in the world.
+                </p>
+                <div className="flex justify-evenly mb-4">
+                    <motion.button
+                        exit={{ opacity: 0 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="bg-neutral-900 p-2 rounded-full text-white hover:scale-[1.1] flex justify-center items-center"
+                    >
+                        Contact me
+                    </motion.button>
+                    <motion.button
+                        exit={{ opacity: 0 }}
+                        initial={{ opacity: 0 }}
+                        transition={{ delay: 0.25 }}
+                        animate={{ opacity: 1 }}
+                        className="text-black rounded-full bg-white h-10 w-10 hover:scale-[1.1]  flex justify-center items-center"
+                    >
+                        <FontAwesomeIcon icon={faLinkedin} size="lg" />
+                    </motion.button>
+                    <motion.button
+                        exit={{ opacity: 0 }}
+                        initial={{ opacity: 0 }}
+                        transition={{ delay: 0.33 }}
+                        animate={{ opacity: 1 }}
+                        className="p-2 text-black rounded-full bg-white h-10 w-10 hover:scale-[1.1]  flex justify-center items-center"
+                    >
+                        <FontAwesomeIcon icon={faTwitter} size="lg" />
+                    </motion.button>
+                    <motion.button
+                        exit={{ opacity: 0 }}
+                        initial={{ opacity: 0 }}
+                        transition={{ delay: 0.45 }}
+                        animate={{ opacity: 1 }}
+                        className="p-2 text-black rounded-full bg-white h-10 w-10 hover:scale-[1.1]  flex justify-center items-center"
+                    >
+                        <FontAwesomeIcon icon={faGithub} size="lg" />
+                    </motion.button>
+                </div>
+            </div>
+        </AnimatePresence>
+    );
 }
 
 export default Intro;
