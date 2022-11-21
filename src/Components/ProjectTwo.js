@@ -14,7 +14,7 @@ function ProjectTwo() {
     };
     return (
         //  bg-neutral-900/30
-        <div className="rounded-xl  mt-2 sm:mt-4 bg-[#CBD2D7] relative group/p2">
+        <div className="rounded-xl md:mt-4 bg-[#CBD2D7] relative group/p2">
             <div className="p-8 flex justify-between">
                 <div>
                     <h1 className="text-xl">Blog Api</h1>
