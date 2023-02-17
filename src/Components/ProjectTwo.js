@@ -1,5 +1,5 @@
 import React from "react";
-import BAP1 from "../resources/projImg/Blog1.png";
+import BAP1 from "../resources/projImg/JDT1.png";
 import { motion } from "framer-motion";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,18 +7,18 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 function ProjectTwo() {
   let routLive = () => {
-    window.open("https://fish-blog-api-client.herokuapp.com/", "_blank");
+    window.open("https://joeddit.com/", "_blank");
   };
   let routRepo = () => {
-    window.open("https://github.com/Joey-Red/blogApi", "_blank");
+    window.open("https://github.com/Joey-Red/frontend-joeddit/", "_blank");
   };
   return (
     //  bg-neutral-900/30
     <div className="rounded-xl mt-2 md:mt-4 bg-[#CBD2D7] relative group/p2">
       <div className="p-8 flex justify-between">
         <div>
-          <h1 className="text-xl">Blog Api</h1>
-          <p>Personal Blogging Website.</p>
+          <h1 className="text-xl">Joeddit</h1>
+          <p>My version of Reddit</p>
         </div>
         <div className="flex gap-2">
           <motion.div
@@ -39,14 +39,13 @@ function ProjectTwo() {
           </motion.div>
         </div>
       </div>
-      <img src={BAP1} alt="Blog Api" className="rounded-b-xl" />
+      <img src={BAP1} alt="Joeddit" className="rounded-b-xl" />
       <div className="rounded-xl ease-in-out transition-opacity opacity-0 group-hover/p2:opacity-100 z-10 absolute top-0 bottom-0 right-0 left-0 bg-neutral-900/90 text-white flex justify-center text-center text-xl h-full items-center">
         <p className="max-w-[90%]">
           {" "}
-          This project is a blog using the MERN stack. Where you can create
-          posts, comment, edit, delete etc. It uses a monorepo where the React
-          front end and Node/Express backend are hosted on heroku. This project
-          uses MongoDB for the database.
+          I recreated Reddit, using the MERN stack. The this project uses a
+          Node/Express back end and a React front end. Hosted on Cyclic and GH
+          Pages, using Ionos for the custom URL.
         </p>
       </div>
     </div>
