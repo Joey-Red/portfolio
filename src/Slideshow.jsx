@@ -95,7 +95,7 @@ function Slideshow() {
       onMouseMove={handleMouseMove}
     >
       <div className="border-b flex justify-center items-center w-full h-full">
-        <img className="lg:h-maxImg" src={pic} alt="" />
+        <img className="lg:min-h-maxImg" src={pic} alt="" />
         <div className="absolute top-2 right-2 text-white gap-2 flex">
           <a
             href={ghLink}
